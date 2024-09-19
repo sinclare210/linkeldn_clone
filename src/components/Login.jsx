@@ -18,6 +18,11 @@ const Login = (props) => {
             </SignIn>
         </div>
     </Nav>
+    <Section>
+        <Hero>
+            Hero
+        </Hero>
+    </Section>
     </Container>
     
   )
@@ -81,6 +86,27 @@ const SignIn = styled.a`
         text-decoration: none;
     }
 `;
+
+const Section = styled.section`
+    align-content: start;
+    display: flex;
+    min-height: 700px;
+    padding-bottom: 138px;
+    padding-top: 40px;
+    padding: 60px 0px;
+    position: relative;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1128px;
+    align-items: center;
+    margin: auto;
+    @media (max-width: 768px) {
+        margin: auto;
+        min-height: 0px;
+    }
+`;
+
+const Hero = styled.div``;
     
 
 
