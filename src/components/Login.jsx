@@ -20,8 +20,15 @@ const Login = (props) => {
     </Nav>
     <Section>
         <Hero>
-            Hero
+            <h1>Welcome to your professional community</h1>
+            <img src="src/images/login-hero.svg" alt="" />
         </Hero>
+        <Form>
+            <Google>
+                <img src="src/images/google.svg" alt="" />
+                Sign in with Google
+            </Google>
+        </Form>
     </Section>
     </Container>
     
@@ -106,7 +113,40 @@ const Section = styled.section`
     }
 `;
 
-const Hero = styled.div``;
+const Hero = styled.div`
+width: 100%;
+h1{
+    padding-bottom: 0px;
+    width: 55%;
+    font-size: 56px;
+    color:#2977c9 ;
+    font-weight: 200;
+    line-height: 70px;
+    @media (max-width: 768px) {
+        font-size: 20px;
+        width: 100%;
+        line-height: 2;
+        text-align: center;
+    }
+
+    img{
+        z-index: -1;
+        width: 700px;
+        height: 670px;
+        position: absolute;
+        bottom: -2px;
+        right: -150px;
+        @media (max-width: 768px) {
+            top: 230px;
+            width: initial;
+            position: initial;
+            height: initial;
+    }
+
+    }
+
+}
+`;
     
 
 
