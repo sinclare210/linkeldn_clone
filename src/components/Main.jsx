@@ -50,7 +50,7 @@ return (
             </Description>
             <SharedImg>
                 <a>
-                    <img src="" alt="" />
+                    <img src="src/images/bruno-guerrero-2uogip_3GTg-unsplash.jpg" alt="" />
                 </a>
             </SharedImg>
         </Article>
@@ -195,6 +195,30 @@ const SharedActor = styled.div`
         outline: none;
         border: none;
         top: 0;
+    }
+
+`;
+
+const Description = styled.div`
+    padding: 0 16px;
+    overflow: hidden;
+    color: rgba(0, 0 ,0 , 0.9);
+    text-align: left;
+    font-size: 14px;
+
+
+`;
+
+const SharedImg = styled.div`
+    margin-top: 8px;
+    display: block;
+    position: relative;
+    width: 100%;
+    background-color: #f9fafb;
+    img{
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
     }
 
 `;
