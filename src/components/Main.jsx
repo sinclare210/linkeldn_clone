@@ -53,6 +53,41 @@ return (
                     <img src="src/images/bruno-guerrero-2uogip_3GTg-unsplash.jpg" alt="" />
                 </a>
             </SharedImg>
+            <SocialCounts>
+                <li>
+                    <button>
+
+                        <img src="src/images/thumbs-up-svgrepo-com.svg" alt="" />
+                        <img src="src/images/clap-svgrepo-com (1).svg" alt="" />
+                        <span>75</span>
+                    </button>
+                </li>
+                <li>
+                    <a>
+                        Comments
+                    </a>
+                </li>
+            </SocialCounts>
+        <SocialActions>
+
+         
+            <button>
+                <img src="src/images/like-svgrepo-com.svg" alt="like icon" />
+                <span>Like</span>
+            </button>
+             <button>
+                <img src="src/images/comment-2-svgrepo-com.svg" alt="comm" />
+                <span>Comment</span>
+            </button>
+             <button>
+                <img src="src/images/share-arrow-svgrepo-com.svg" alt="like icon" />
+                <span>Share</span>
+            </button>
+             <button>
+                <img src="src/images/send-svgrepo-com.svg" alt="like icon" />
+                <span>Send</span>
+            </button>
+        </SocialActions>
         </Article>
     </div>
     </Container>
@@ -223,4 +258,42 @@ const SharedImg = styled.div`
 
 `;
 
+const SocialCounts = styled.ul`
+    line-height: 1.3;
+    display: flex;
+    overflow: auto;
+    padding: 8px 0;
+    margin: 0 16px;
+    list-style: none;
+    border-bottom: 1px solid #e9e5df;
+    li{
+        margin-right: 5px;
+        font-size: 12px;
+        button{
+            display: flex;
+        }
+    }
+
+`;
+
+const SocialActions = styled.div`
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+    min-height: 40px;
+    padding: 4px 8px;
+    button{
+        display: inline-flex;
+        align-items: center;
+        padding: 8px;
+        color: #0a66c2;
+        @media (min-width: 768px) {
+            margin-left: 8px;
+
+        }
+    }
+`;
+
 export default Main
+
