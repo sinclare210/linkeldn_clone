@@ -105,6 +105,7 @@ const Link = styled.div`
     line-height: 1.5;
     color: rgba(0, 0, 0, 0.9);
     font-weight: 600;
+
 `;
 
 const AddPhotoText = styled.div`
@@ -113,6 +114,7 @@ const AddPhotoText = styled.div`
     font-size: 12px;
     line-height: 1.33;
     font-weight: 400;
+    cursor: pointer;
 `;
 
 const Widget = styled.div`
@@ -126,6 +128,7 @@ const Widget = styled.div`
         justify-content: space-between;
         align-items: center;
         padding: 4px 12px;
+        cursor: pointer;
 
         &:hover {
         background-color: rgba(0, 0, 0, 0.08);
@@ -159,6 +162,7 @@ const Item = styled.a`
     padding: 12px;
     font-size: 12px;
     display: block;
+    cursor: pointer;
     span {
         display: flex;
         align-items: center;
@@ -182,6 +186,7 @@ const CommunityCard = styled(ArtCard)`
         color: black;
         padding: 4px 12px 4px 12px;
         font-size: 12px;
+        cursor: pointer;
 
         &:hover {
         color: #0a66c2;
