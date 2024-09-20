@@ -19,15 +19,39 @@ const Header = (props) => {
                 </SearchIcon>
             </Search>
             <Nav>
-                <NavListWrap>
-                
-              <NavList>
+        <NavListWrap>
+            <NavList className='active'>
                 <a>
                     <img src="src/images/nav-home.svg" alt="" />
                     <span>Home</span>
                 </a>
-                </NavList>  
-                </NavListWrap>
+            </NavList>
+              <NavList>
+                <a>
+                    <img src="src/images/nav-network.svg" alt="" />
+                    <span>My Networks</span>
+                </a>
+            </NavList> 
+             <NavList>
+                <a>
+                    <img src="src/images/nav-jobs.svg" alt="" />
+                    <span>Jobs</span>
+                </a>
+            </NavList>  
+             <NavList>
+                <a>
+                    <img src="src/images/nav-messaging.svg" alt="" />
+                    <span>Messaging</span>
+                </a>
+            </NavList>  
+             <NavList>
+                <a>
+                    <img src="src/images/nav-notifications.svg" alt="" />
+                    <span>Notifications</span>
+                </a>
+            </NavList>  
+              
+        </NavListWrap>
             </Nav>
         </Content>
     </Container>
@@ -151,15 +175,18 @@ const NavList = styled.li`
     min-width: 80px;
     position: relative;
     text-decoration: none;
+    
 
     span {
       color: rgba(0, 0, 0, 0.6);
       display: flex;
       align-items: center;
+      
     }
 
     @media (max-width: 768px) {
       min-width: 70px;
+    
     }
   }
 
