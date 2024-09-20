@@ -5,8 +5,32 @@ const Main = (props) => {
 return (
     <Container>
         <ShareBox>
-            
-        </ShareBox>
+            Share
+       
+        <div>
+            <img src="src/images/user.svg" alt="" />
+            <button>Start a post</button>
+        </div>
+         <div>
+            <button>
+                <img src="src/images/image-svgrepo-com (1).svg" alt="" />
+                <span>Photo</span>
+            </button>
+            <button>
+                <img src="src/images/video-frame-play-horizontal-svgrepo-com.svg" alt="" /> 
+                <span>Videos</span>
+            </button>
+            <button>
+                <img src="src/images/calendar-date-event-month-schedule-svgrepo-com.svg" alt="" /> 
+                <span>Event</span>
+            </button>
+            <button>
+                <img src="src/images/article-blog-optimation-svgrepo-com.svg" alt="" /> 
+                <span>Write article</span>
+            </button>
+        </div>
+     </ShareBox>
+
     </Container>
   )
 }
@@ -24,7 +48,7 @@ const CommonCard = styled.div`
     border-radius: 5px;
     position: relative;
     border: none;
-        box-shadow:  0 0 0 1px rgb(0 0 0 / 15%),  0 0 0  rgb(0 0 0 / 20%);
+    box-shadow:  0 0 0 1px rgb(0 0 0 / 15%),  0 0 0  rgb(0 0 0 / 20%);
 
 `;
 
@@ -34,6 +58,60 @@ const ShareBox = styled(CommonCard)`
     background: white;
     margin: 0 0 8px;
     color: #958b7b;
+    div{
+        button{
+            outline: none;
+            font-size: 14px;
+            line-height: 1.5;
+            min-height: 48px;
+            background: transparent;
+            color: rgba(0,0,0,0.6);
+            border: none;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            
+
+        }
+        &:first-child{
+            display: flex;
+            align-items: center;
+            padding: 8px 16px 8px 16px;
+            img{
+                width: 48px;
+                border-radius: 50%;
+                margin-right: 8px;
+
+            }
+            button{
+                margin: 4px 0;
+                flex-grow: 1;
+                border-radius: 35px;
+                padding-left: 16px;
+                border: 1px solid rgba(0,0,0,0.15);
+                background-color: white;
+                text-align: left;
+            }
+        }
+        &:nth-child(2){
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding-bottom: 4px;
+
+            button{
+                img{
+                    margin:0 4px 0 -2px;
+
+                }
+                span{
+                    color: #70b5f9;
+                }
+            }
+
+        }
+    
+    }
 `;
 
 export default Main
