@@ -12,9 +12,9 @@ const Home = () => {
         <p>Find talented pros in record time with upwork and keep business moving</p>
       </Section>
       <Layout>
-        <div>Left side</div>
-        <div>Main</div>
-        <div>Right Side</div>
+        <LeftSide/>
+        <Main/>
+        <RightSide/>
       </Layout>
     </Container>
     
