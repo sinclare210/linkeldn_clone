@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import styled from 'styled-components'
+import { SignOutAPI } from '../actions/Index';
+import { signOut } from 'firebase/auth';
 
 const Header = (props) => {
   return (
@@ -59,7 +61,7 @@ const Header = (props) => {
                   <img src="src/images/down-icon.svg" alt="" />
                   </span>
                 </a>
-                <SignOut>
+                <SignOut onClick={() =>props.signOut()}>
                   <a>
                     Sign Out
                   </a>
@@ -234,6 +236,7 @@ const SignOut = styled.div`
   transition-duration: 167ms;
   display: none;
   text-align: center;
+  cursor: pointer;
 
 `;
 
@@ -274,7 +277,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-
+  signOut: () => dispatch(SignOutAPI())
 });
 
 
