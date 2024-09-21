@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PostModal from './PostModal'
 
 const Main = (props) => {
 return (
@@ -90,6 +91,7 @@ return (
         </SocialActions>
         </Article>
     </div>
+    <PostModal />
     </Container>
   )
 }
