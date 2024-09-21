@@ -1,33 +1,26 @@
 import { auth, provider } from "../Firebase";
 import { signInWithPopup } from "firebase/auth";
+import { SET_USER } from "./ActionType";
 
-// const SignInAPI = () => {
-//   return (dispatch) => {
-//     auth.signInWithPopup(auth, provider)
-//       .then((payload) => {
-//         console.log(payload);
-
-//       })
-//       .catch((error) => {
-//         alert(error.message);
-
-//       });
-//   };
-// };
+export const setUser = (result) => ({
+  type: SET_USER,
+  user: result,
+});
 
 const SignInAPI = () => {
   return (dispatch) => {
     console.log("SignInAPI triggered");
+
     signInWithPopup(auth, provider)
       .then((result) => {
-        console.log("User successfully signed in", result.user);
+        console.log("Google Sign-In Successful", result.user);
+        dispatch(setUser(result.user));
       })
       .catch((error) => {
-        console.error("Google Sign-In Error", error.message);
-        alert(error.message);
+        console.error("Google Sign-In Error", error.message, error);
+        alert(`Error during sign-in: ${error.message}`);
       });
   };
 };
 
-
-export default SignInAPI
+export default SignInAPI;
