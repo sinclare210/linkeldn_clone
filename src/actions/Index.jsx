@@ -2,6 +2,7 @@ import { auth, provider, storage,db } from "../Firebase";
 import { signInWithPopup, signOut } from "firebase/auth";
 import { SET_USER } from "./ActionType";
 import { collection, addDoc } from "firebase/firestore";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 
 
@@ -102,12 +103,19 @@ export const SignOutAPI = () => {
 
 
 
+
+
 export const postArticleAPI = (payload) => {
   return async (dispatch) => {
     try {
       if (payload.image) {
-        const upload = storage.ref(`images/${payload.image.name}`).put(payload.image);
-        upload.on(
+
+        const storageRef = ref(storage, `images/${payload.image.name}`);
+        
+
+        const uploadTask = uploadBytesResumable(storageRef, payload.image);
+        
+        uploadTask.on(
           "state_changed",
           (snapshot) => {
             const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -117,7 +125,10 @@ export const postArticleAPI = (payload) => {
             console.error("Image upload error:", error);
           },
           async () => {
-            const downloadURL = await upload.snapshot.ref.getDownloadURL();
+
+            const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+            
+
             await addDoc(collection(db, "articles"), {
               actor: {
                 description: payload.user.email,
@@ -154,6 +165,7 @@ export const postArticleAPI = (payload) => {
     }
   };
 };
+
 
 
 
