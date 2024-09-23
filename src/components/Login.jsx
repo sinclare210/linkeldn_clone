@@ -15,7 +15,7 @@ const Login = (props) => {
         }
     <Nav>
         <a href="/">
-        <img src="src/images/login-logo.svg" alt="" />
+        <img src="../images/login-logo.svg" alt="" />
         </a>
         <div>
             <Join>
@@ -33,7 +33,7 @@ const Login = (props) => {
         </Hero>
         <Form>
             <Google onClick={() => props.signIn()}>
-                <img src="src/images/google.svg" alt="" />
+                <img src="src/google.svg" alt="" />
                 Sign in with Google
             </Google>
         </Form>
