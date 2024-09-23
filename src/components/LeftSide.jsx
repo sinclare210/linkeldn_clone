@@ -22,12 +22,12 @@ const LeftSide = (props) => {
                 <span>Connections</span>
                 <span>Grow your network</span>
                 </div>
-                <img src="src/images/widget-icon.svg" alt="" />
+                <img src="/images/widget-icon.svg" alt="" />
             </a>
             </Widget>
             <Item>
             <span>
-                <img src="src/images/item-icon.svg" alt="" />
+                <img src="/images/item-icon.svg" alt="" />
                 My Items
             </span>
             </Item>

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { connect } from 'react-redux'
 import  SignInAPI  from '../actions/Index'
 import { Navigate } from 'react-router-dom';
-import logo from "../images/home-logo.svg"
+
 
 
 const Login = (props) => {
@@ -16,7 +16,7 @@ const Login = (props) => {
         }
     <Nav>
         <a href="/">
-        <img src={logo} alt="" />
+        <img src="/images/home-logo.svg" alt="" />
         </a>
         <div>
             <Join>
@@ -30,11 +30,11 @@ const Login = (props) => {
     <Section>
         <Hero>
             <h1>Welcome to your professional community</h1>
-            <img src="public/images/login-hero.svg" alt=""  />
+            <img src="/images/login-hero.svg" alt=""  />
         </Hero>
         <Form>
             <Google onClick={() => props.signIn()}>
-                <img src="public/images/google.svg" alt="" />
+                <img src="/images/google.svg" alt="" />
                 Sign in with Google
             </Google>
         </Form>

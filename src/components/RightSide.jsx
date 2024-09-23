@@ -7,7 +7,7 @@ const RightSide = () => {
             <FollowCard>
             <Title>
             <h2>Add to your feed</h2>
-            <img src="src/images/feed-icon.svg" alt="" />
+            <img src="/images/feed-icon.svg" alt="" />
             </Title>
 
             <FeedList>
@@ -33,12 +33,12 @@ const RightSide = () => {
 
             <Recommendation>
             View all recommendations
-            <img src="src/images/right-icon.svg" alt="" />
+            <img src="/images/right-icon.svg" alt="" />
             </Recommendation>
         </FollowCard>
         <BannerCard>
             <img
-            src="src/images/li_evergreen_jobs_ad_300x250_v1.jpg"
+            src="/images/li_evergreen_jobs_ad_300x250_v1.jpg"
             alt=""
             />
         </BannerCard>

@@ -41,26 +41,26 @@ return (
             {   props.user && props.user.photoURL?  <img src={props.user.photoURL} alt="" />:
        
         
-            <img src="src/images/user.svg" alt="" />
+            <img src="/images/user.svg" alt="" />
             }
             <button onClick={handleClick}
             disabled={props.loading?true:false}>Start a post</button>
         </div>
          <div>
             <button>
-                <img src="src/images/image-svgrepo-com (1).svg" alt="" />
+                <img src="/images/image-svgrepo-com (1).svg" alt="" />
                 <span>Photo</span>
             </button>
             <button>
-                <img src="src/images/video-frame-play-horizontal-svgrepo-com.svg" alt="" /> 
+                <img src="/images/video-frame-play-horizontal-svgrepo-com.svg" alt="" /> 
                 <span>Videos</span>
             </button>
             <button>
-                <img src="src/images/calendar-date-event-month-schedule-svgrepo-com.svg" alt="" /> 
+                <img src="/images/calendar-date-event-month-schedule-svgrepo-com.svg" alt="" /> 
                 <span>Event</span>
             </button>
             <button>
-                <img src="src/images/article-blog-optimation-svgrepo-com.svg" alt="" /> 
+                <img src="/images/article-blog-optimation-svgrepo-com.svg" alt="" /> 
                 <span>Write article</span>
             </button>
         </div>
@@ -79,7 +79,7 @@ return (
                     </div>
                 </a>
                 <button>
-                    <img src="src/images/ellipsis-svgrepo-com.svg" alt="" />
+                    <img src="/images/ellipsis-svgrepo-com.svg" alt="" />
                 </button>
             </SharedActor>
             <Description>
@@ -96,8 +96,8 @@ return (
                 <li>
                     <button>
 
-                        <img src="src/images/thumbs-up-svgrepo-com.svg" alt="" />
-                        <img src="src/images/clap-svgrepo-com (1).svg" alt="" />
+                        <img src="/images/thumbs-up-svgrepo-com.svg" alt="" />
+                        <img src="/images/clap-svgrepo-com (1).svg" alt="" />
                         <span>75</span>
                     </button>
                 </li>
@@ -111,19 +111,19 @@ return (
 
          
             <button>
-                <img src="src/images/like-svgrepo-com.svg" alt="like icon" />
+                <img src="/images/like-svgrepo-com.svg" alt="like icon" />
                 <span>Like</span>
             </button>
              <button>
-                <img src="src/images/comment-2-svgrepo-com.svg" alt="comm" />
+                <img src="/images/comment-2-svgrepo-com.svg" alt="comm" />
                 <span>Comment</span>
             </button>
              <button>
-                <img src="src/images/share-arrow-svgrepo-com.svg" alt="like icon" />
+                <img src="/images/share-arrow-svgrepo-com.svg" alt="like icon" />
                 <span>Share</span>
             </button>
              <button>
-                <img src="src/images/send-svgrepo-com.svg" alt="like icon" />
+                <img src="/images/send-svgrepo-com.svg" alt="like icon" />
                 <span>Send</span>
             </button>
         </SocialActions>
