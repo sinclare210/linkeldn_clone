@@ -31,7 +31,7 @@ const PostModal = (props) => {
 
     });
 
-     const swichAssetArea= (area) => {
+     const switchAssetArea= (area) => {
         setShareImage("");
         setVideoLink("");
         setAssetArea(area);
@@ -96,18 +96,19 @@ const PostModal = (props) => {
                     <textarea value={editorText}
                     onChange={(e) => setEditorText(e.target.value)}
                     placeholder='What do you want to talk about??' autoFocus={true}/>
-                    {assetArea === "image"?(
+                    {assetArea === "image" ? (
                     <UploadImage>
                         <input type="file" 
-                        name='Image'
+                        name='image'
                         id='file'
-                        
+                        style={{display: "none"}} 
                         accept='image/gif, image/jpeg, image/png'
-                        onChange={handleChange} onClick={console.log("ok")}/>
+                        onChange={handleChange}
+                        />
                         <p>
-                            <label htmlFor="file" >Select an image to share</label>
+                            <label htmlFor="file">Select an image to share</label>
                         </p>
-                        {shareImage && < img src={URL.createObjectURL(shareImage)}/>}
+                        {shareImage && <img src={URL.createObjectURL(shareImage)}/>}
                     </UploadImage>)
                         : assetArea === "media" &&(
                         <>
@@ -126,10 +127,10 @@ const PostModal = (props) => {
             <SharedCreation>
                 <AttachAssets>
                     <AssetButton>
-                        <img src="" alt="" onClick={() => swichAssetArea("image")} />
+                        <img src="" alt="///" onClick={() => switchAssetArea("image")} />
                     </AssetButton>
                       <AssetButton>
-                        <img src="" alt="//" onClick={() => swichAssetArea("media")}/>
+                        <img src="" alt="//" onClick={() => switchAssetArea("media")}/>
                     </AssetButton>
                 </AttachAssets>
                 <ShareComment>
