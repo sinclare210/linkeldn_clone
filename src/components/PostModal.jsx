@@ -127,10 +127,10 @@ const PostModal = (props) => {
             <SharedCreation>
                 <AttachAssets>
                     <AssetButton>
-                        <img src="" alt="///" onClick={() => switchAssetArea("image")} />
+                        <img src="/images/image-upload-svgrepo-com.svg" alt="///" onClick={() => switchAssetArea("image")} />
                     </AssetButton>
                       <AssetButton>
-                        <img src="" alt="//" onClick={() => switchAssetArea("media")}/>
+                        <img src="/images/video-upload-svgrepo-com.svg" alt="//" onClick={() => switchAssetArea("media")}/>
                     </AssetButton>
                 </AttachAssets>
                 <ShareComment>
