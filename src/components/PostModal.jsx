@@ -2,6 +2,16 @@ import React from 'react'
 import styled from 'styled-components'
 import { useState } from 'react'
 import ReactPlayer from 'react-player'
+import { connect } from 'react-redux'
+import { initializeApp } from 'firebase/app';
+import { getFirestore, Timestamp } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
+import { storage } from "../Firebase"; 
+
+
+
+
+import { postArticleAPI } from '../actions/Index'
 
 const PostModal = (props) => {
     const [editorText, setEditorText] = useState("");
@@ -20,10 +30,49 @@ const PostModal = (props) => {
         }
 
     });
+
+     const swichAssetArea= (area) => {
+        setShareImage("");
+        setVideoLink("");
+        setAssetArea(area);
+
+    }
+
+    const postArticle = (e) =>{
+
+
+        e.preventDefault();
+        if(e.target !== e.currentTarget){
+            console.log("hhsh")
+            return;
+           
+        }
+
+    const payload = {
+    image: shareImage,
+    video: videoLink,
+    user: props.user,
+    description: editorText,
+    timestamp: Timestamp.now() 
+    };
+
+   
+
+    
+    props.postArticle(payload);
+    reset(e);
+
+    }
+
     const reset = ((e) => {
         setEditorText("");
+        setShareImage("");
+        setVideoLink("");
+        setAssetArea("");
         props.handleClick(e)
     })
+
+   
   return (
     <>
     { props.showModal === "open" &&
@@ -39,13 +88,15 @@ const PostModal = (props) => {
             </Header>
             <SharedContent>
                 <UserInfo>
-                    <img src="src/images/user.svg" alt="" />
-                    <span>Names</span>
+                    {props.user && props.user.photoURL? <img src = {props.user.photoURL}/> : <img src="src/images/user.svg"/>}
+     
+                    <span>{props.user.displayName}</span>
                 </UserInfo>
                 <Editor>
                     <textarea value={editorText}
                     onChange={(e) => setEditorText(e.target.value)}
                     placeholder='What do you want to talk about??' autoFocus={true}/>
+                    {assetArea === "image"?(
                     <UploadImage>
                         <input type="file" 
                         name='Image'
@@ -57,21 +108,28 @@ const PostModal = (props) => {
                             <label htmlFor="file" >Select an image to share</label>
                         </p>
                         {shareImage && < img src={URL.createObjectURL(shareImage)}/>}
+                    </UploadImage>)
+                        : assetArea === "media" &&(
                         <>
+                        
+                       
+                        
                         <input type="text" value={videoLink} placeholder='Please input a video link' onChange={(e) => setVideoLink(e.target.value)} 
                         />
                         {videoLink && <ReactPlayer width={"100%"} url={videoLink}/>}
-                        </>
-                    </UploadImage>
+                        </>)
+                        
+                    
+                    }
                 </Editor>
             </SharedContent>
             <SharedCreation>
                 <AttachAssets>
                     <AssetButton>
-                        <img src="" alt="" />
+                        <img src="" alt="" onClick={() => swichAssetArea("image")} />
                     </AssetButton>
                       <AssetButton>
-                        <img src="" alt="//" />
+                        <img src="" alt="//" onClick={() => swichAssetArea("media")}/>
                     </AssetButton>
                 </AttachAssets>
                 <ShareComment>
@@ -79,7 +137,7 @@ const PostModal = (props) => {
                         <img src="" alt="//" />
                     </AssetButton>
                 </ShareComment>
-                <PostButton disabled={!editorText ? true: false}>
+                <PostButton disabled={!editorText ? true: false} onClick={(event) => postArticle(event) }>
                     Post
                 </PostButton>
             </SharedCreation>
@@ -247,5 +305,17 @@ const UploadImage = styled.div`
     }
 `;
 
+const mapStateToProps = (state) => {
+  return {
+    user: state.userState.user,
+  }
+}
 
-export default PostModal
+const mapDispatchToProps = (dispatch) => ({
+  postArticle: (payload) => dispatch(postArticleAPI(payload))
+});
+
+
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(PostModal)

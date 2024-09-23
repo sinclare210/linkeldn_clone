@@ -1,8 +1,7 @@
-import firebase from "firebase/compat/app";
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-
 import { getAuth, GoogleAuthProvider } from 'firebase/auth';
+import { getStorage } from 'firebase/storage'; 
+import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDKo8-24PiuMVMS-Mjz5UfTiokaTtpLRqw",
@@ -14,11 +13,12 @@ const firebaseConfig = {
   measurementId: "G-MFPXP0H77J"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+
+const firebaseApp = initializeApp(firebaseConfig);
+const auth = getAuth(firebaseApp);
 const provider = new GoogleAuthProvider();
+const db = getFirestore(firebaseApp);
+const storage = getStorage(firebaseApp);
 
-export { auth, provider };
-
-
+// Use named exports
+export { auth, provider, db ,storage };
