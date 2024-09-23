@@ -1,8 +1,10 @@
 import { auth, provider, storage,db } from "../Firebase"; 
 import { signInWithPopup, signOut } from "firebase/auth";
-import { SET_USER } from "./ActionType";
-import { collection, addDoc } from "firebase/firestore";
+import { SET_USER,SET_LOADING_STATUS } from "./ActionType";
+import { collection, addDoc, query, orderBy, onSnapshot } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { FETCH_ARTICLES_SUCCESS } from "./ActionType";
+import { Timestamp } from "firebase/firestore";
 
 
 
@@ -11,7 +13,11 @@ export const setUser = (result) => ({
   user: result,
 });
 
-// ...rest of your actions...
+
+export const setLoading = (status) => ({
+  type: SET_LOADING_STATUS,
+  status: status,
+})
 
 export const SignInAPI = () => {
   return (dispatch) => {
@@ -107,6 +113,7 @@ export const SignOutAPI = () => {
 
 export const postArticleAPI = (payload) => {
   return async (dispatch) => {
+    dispatch(setLoading(true))
     try {
       if (payload.image) {
 
@@ -133,7 +140,7 @@ export const postArticleAPI = (payload) => {
               actor: {
                 description: payload.user.email,
                 title: payload.user.displayName,
-                date: payload.timestamp,
+                date:   Timestamp.now(),
                 image: payload.user.photoURL,
               },
               video: payload.video,
@@ -141,6 +148,7 @@ export const postArticleAPI = (payload) => {
               sharedImg: downloadURL,
               description: payload.description,
             });
+             dispatch(setLoading(false))
             console.log("Article posted successfully");
           }
         );
@@ -160,11 +168,46 @@ export const postArticleAPI = (payload) => {
         });
         console.log("Article posted successfully");
       }
+       dispatch(setLoading(false))
     } catch (error) {
       console.error("Error posting article:", error);
     }
   };
 };
+
+
+
+export const getArticleAPI = () => {
+  return (dispatch) => {
+    dispatch(setLoading(true));
+
+
+    const articlesQuery = query(
+      collection(db, "articles"),
+      orderBy("actor.date", "desc")
+    );
+
+    // Use onSnapshot to listen for real-time updates
+    onSnapshot(articlesQuery, (snapshot) => {
+      let articles = [];
+      snapshot.docs.forEach((doc) => {
+        articles.push({ id: doc.id, ...doc.data() });
+      });
+
+     dispatch({
+    type: FETCH_ARTICLES_SUCCESS,
+    payload: articles
+  });
+      console.log("Fetched Articles:", articles);
+
+      dispatch(setLoading(false));
+    }, (error) => {
+      console.error("Error fetching articles:", error);
+      dispatch(setLoading(false));
+    });
+  };
+};
+
 
 
 

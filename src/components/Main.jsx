@@ -2,9 +2,17 @@ import React from 'react'
 import styled from 'styled-components'
 import PostModal from './PostModal'
 import { useState } from 'react'
+import { connect } from 'react-redux'
+import { useEffect } from 'react'
+import { getArticleAPI } from '../actions/Index'
+import ReactPlayer from 'react-player'
 
 const Main = (props) => {
     const [showModal, setShowModal] = useState("close");
+
+    useEffect(() => {
+        props.getArticles();
+    },[]);
     const handleClick = ((e) => {
         e.preventDefault();
         if(e.target !== e.currentTarget){
@@ -25,13 +33,18 @@ const Main = (props) => {
         }
     })
 return (
+    <>
+    { (
     <Container>
         <ShareBox>
-            Share
+            <div>
+            {   props.user && props.user.photoURL?  <img src={props.user.photoURL} alt="" />:
        
-        <div>
+        
             <img src="src/images/user.svg" alt="" />
-            <button onClick={handleClick}>Start a post</button>
+            }
+            <button onClick={handleClick}
+            disabled={props.loading?true:false}>Start a post</button>
         </div>
          <div>
             <button>
@@ -52,15 +65,17 @@ return (
             </button>
         </div>
      </ShareBox>
-    <div>
-        <Article>
+     <Content>
+        {props.loading  && <img src="src/images/loader-1-svgrepo-com (1).svg"/>}
+        {props.articles.length > 0 && props.articles.map((article,key) => (
+             <Article key={key}>
             <SharedActor>
                 <a>
-                    <img src="src/images/user.svg" alt="" />
+                    <img src={article.actor.image} alt="" />
                     <div>
-                        <span>Title</span>
-                        <span>Info</span>
-                        <span>Date</span>
+                        <span>{article.actor.title}</span>
+                        <span>{article.actor.description}</span>
+                        <span>{}</span>
                     </div>
                 </a>
                 <button>
@@ -68,11 +83,13 @@ return (
                 </button>
             </SharedActor>
             <Description>
-                Dsec
+                {article.description}
             </Description>
             <SharedImg>
                 <a>
-                    <img src="src/images/bruno-guerrero-2uogip_3GTg-unsplash.jpg" alt="" />
+                    {
+                        !article.sharedImg && article.video ? <ReactPlayer width={"100%"} url={article.video}/>
+                    :( article.sharedImg) && <img src={article.sharedImg} alt="" srcset="" /> }
                 </a>
             </SharedImg>
             <SocialCounts>
@@ -86,7 +103,7 @@ return (
                 </li>
                 <li>
                     <a>
-                        Comments
+                        {article.comments}
                     </a>
                 </li>
             </SocialCounts>
@@ -111,9 +128,12 @@ return (
             </button>
         </SocialActions>
         </Article>
-    </div>
+        ))};
+   </Content>
     <PostModal showModal={showModal} handleClick ={handleClick}/>
-    </Container>
+    </Container>)
+}
+    </>
   )
 }
 
@@ -288,12 +308,15 @@ const SocialCounts = styled.ul`
     padding: 8px 0;
     margin: 0 16px;
     list-style: none;
+
     border-bottom: 1px solid #e9e5df;
     li{
         margin-right: 5px;
         font-size: 12px;
         button{
             display: flex;
+            border: none;
+            background-color: white;
         }
     }
 
@@ -311,6 +334,8 @@ const SocialActions = styled.div`
         align-items: center;
         padding: 8px;
         color: #0a66c2;
+        background-color: white;
+        border: none;
         @media (min-width: 768px) {
             margin-left: 8px;
 
@@ -318,5 +343,25 @@ const SocialActions = styled.div`
     }
 `;
 
-export default Main
+const Content = styled.div`
+    text-align: center;
+    & > img{
+        width: 30px;
+    }
+`;
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.userState.user,
+    loading: state.articleState.loading,
+    articles: state.articleState.articles
+  }
+
+}
+
+const mapDispatchToProps = (dispatch) => ({
+    getArticles: () => dispatch(getArticleAPI())
+});
+
+export default connect(mapStateToProps,mapDispatchToProps)(Main)
 
