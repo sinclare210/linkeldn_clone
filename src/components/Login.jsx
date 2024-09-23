@@ -33,7 +33,7 @@ const Login = (props) => {
         </Hero>
         <Form>
             <Google onClick={() => props.signIn()}>
-                <img src="src/google.svg" alt="" />
+                <img src="src/images/google.svg" alt="" />
                 Sign in with Google
             </Google>
         </Form>
