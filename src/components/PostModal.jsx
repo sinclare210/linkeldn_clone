@@ -101,9 +101,9 @@ const PostModal = (props) => {
                         <input type="file" 
                         name='Image'
                         id='file'
-                        style={{display: "none"}} 
+                        
                         accept='image/gif, image/jpeg, image/png'
-                        onChange={handleChange}/>
+                        onChange={handleChange} onClick={console.log("ok")}/>
                         <p>
                             <label htmlFor="file" >Select an image to share</label>
                         </p>
