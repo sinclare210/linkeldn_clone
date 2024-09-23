@@ -19,10 +19,10 @@ const Login = (props) => {
         <img src="/images/home-logo.svg" alt="" />
         </a>
         <div>
-            <Join>
+            <Join onClick={() => props.signIn()}>
                 Join Now
             </Join>
-            <SignIn>
+            <SignIn onClick={() => props.signIn()}>
                 Sign In
             </SignIn>
         </div>
