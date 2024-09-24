@@ -48,7 +48,7 @@ return (
         </div>
          <div>
             <button>
-                <img src="/images/image-svgrepo-com (1).svg" alt="" />
+                <img src="/images/svg-image-14.svg" alt="" />
                 <span>Photo</span>
             </button>
             <button>
@@ -79,7 +79,7 @@ return (
                     </div>
                 </a>
                 <button>
-                    <img src="/images/ellipsis-svgrepo-com.svg" alt="" />
+                    <img src="/images/svg-image-15.svg" alt="" />
                 </button>
             </SharedActor>
             <Description>

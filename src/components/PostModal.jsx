@@ -82,7 +82,7 @@ const PostModal = (props) => {
             <Header>
                 <h2>Create a post</h2>
                 <button onClick={(e) => reset(e)}>
-                     <img src="" alt="xx" />
+                     <img src="/images/svg-image-3.svg" alt="xx" />
                 </button>
                
             </Header>
@@ -127,7 +127,7 @@ const PostModal = (props) => {
             <SharedCreation>
                 <AttachAssets>
                     <AssetButton>
-                        <img src="/images/image-upload-svgrepo-com.svg" alt="///" onClick={() => switchAssetArea("image")} />
+                        <img src="/images/svg-image-12.svg" alt="///" onClick={() => switchAssetArea("image")} />
                     </AssetButton>
                       <AssetButton>
                         <img src="/images/video-upload-svgrepo-com.svg" alt="//" onClick={() => switchAssetArea("media")}/>
@@ -135,7 +135,7 @@ const PostModal = (props) => {
                 </AttachAssets>
                 <ShareComment>
                       <AssetButton>
-                        <img src="" alt="//" />
+                        <img src="/images/svg-image-36.svg" alt="//" />
                     </AssetButton>
                 </ShareComment>
                 <PostButton disabled={!editorText ? true: false} onClick={(event) => postArticle(event) }>
