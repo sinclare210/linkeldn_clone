@@ -35,17 +35,33 @@ export const SignInAPI = () => {
   };
 };
 
-export const getUserAuth = () => {
-  return (dispatch) => {
-    auth.onAuthStateChanged((user) => {
-      if (user) {
-        dispatch(setUser(user));
-      } else {
-        dispatch(setUser(null)); // Clear user if not authenticated
-      }
-    });
-  };
+// export const getUserAuth = () => {
+//   return (dispatch) => {
+//     auth.onAuthStateChanged((user) => {
+//       if (user) {
+//         dispatch(setUser(user));
+//       } else {
+//         dispatch(setUser(null));
+//       }
+//     });
+//   };
+// };
+export const getUserAuth = () => (dispatch) => {
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      dispatch({
+        type: SET_USER,
+        payload: user,
+      });
+    } else {
+      dispatch({
+        type: SET_USER,
+        payload: null,
+      });
+    }
+  });
 };
+
 
 export const SignOutAPI = () => {
   return (dispatch) => {
