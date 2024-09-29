@@ -17,7 +17,7 @@ const Login = (props) => {
         }
     <Nav>
         <Link to="/">
-        <img src="/images/home-logo.svg" alt="" />
+
         </Link>
         <div>
             <Join onClick={() => props.signIn()}>
@@ -30,7 +30,7 @@ const Login = (props) => {
     </Nav>
     <Section>
         <Hero>
-            <h1>Welcome to your professional community</h1>
+            <h1>Welcome to the gaming community</h1>
             <img src="/images/login-hero.svg" alt=""  />
         </Hero>
         <Form>
