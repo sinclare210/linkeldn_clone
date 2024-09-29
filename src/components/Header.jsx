@@ -37,7 +37,7 @@ const Header = (props) => {
                 </Link>
             </NavList> 
              <NavList>
-                <Link to='/Job'>
+                <Link to='/JobListing'>
                     <img src="/images/nav-jobs.svg" alt="" />
                     <span>Jobs</span>
                 </Link>

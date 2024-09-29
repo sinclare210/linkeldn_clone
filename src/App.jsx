@@ -11,6 +11,7 @@ import Networks from './components/Networks'
 import Messages from './components/Messages'
 import Notifications from './components/Notifications'
 import Gaming from './components/Gaming'
+import JobListing from './components/JobListing'
 
 
 
@@ -35,7 +36,7 @@ function App(props) {
               </>
             } 
           />
-          <Route path='/Job' element={<><Job/></>}/>
+          <Route path='/JobListing' element={<><JobListing/></>}/>
           <Route path='/Networks' element={<><Networks/></>}/>
           <Route path='/Messages' element={<><Messages/></>}/>
           <Route path='/Notifications' element={<><Notifications/></>}/>
