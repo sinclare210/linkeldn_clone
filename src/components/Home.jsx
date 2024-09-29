@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 const Home = (props) => {
   return (
     <Container>
-     
+    
       <Section>
         <h5><a>Hiring in a hurry? - </a></h5>
         <p>Find talented pros in record time with upwork and keep business moving</p>

@@ -11,12 +11,13 @@ import Networks from './components/Networks'
 import Messages from './components/Messages'
 import Notifications from './components/Notifications'
 import Gaming from './components/Gaming'
-import { auth } from './Firebase';
 
 
 
 function App(props) {
-   
+    useEffect(() => {
+      props.getUserAuth();
+    },[props])
   return (
     <>
       <Router>

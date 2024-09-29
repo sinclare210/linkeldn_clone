@@ -63,9 +63,9 @@ const Header = (props) => {
                   </span>
                 </a>
                 <SignOut onClick={() =>props.signOut()}>
-                  <a>
+                  <Link to="/">
                     Sign Out
-                  </a>
+                  </Link>
                 </SignOut>
               </User>
              <Work>
