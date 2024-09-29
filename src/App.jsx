@@ -17,7 +17,7 @@ import Gaming from './components/Gaming'
 function App(props) {
     useEffect(() => {
       props.getUserAuth();
-    })
+    },[props])
   return (
     <>
       <Router>

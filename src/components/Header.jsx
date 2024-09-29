@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import styled from 'styled-components'
 import { SignOutAPI } from '../actions/Index';
 import { signOut } from 'firebase/auth';
+import { Link } from 'react-router-dom';
 
 const Header = (props) => {
   return (
@@ -42,10 +43,10 @@ const Header = (props) => {
                 </a>
             </NavList>  
              <NavList>
-                <a href='/Messages'>
+                <Link to='/Messages'>
                     <img src="/images/nav-messaging.svg" alt="" />
                     <span>Messaging</span>
-                </a>
+                </Link>
             </NavList>  
              <NavList>
                 <a href='/Notifications'>

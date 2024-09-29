@@ -1,13 +1,15 @@
 import React from 'react'
 import Header from './Header'
 import { connect } from 'react-redux'
+import { Navigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-const Messages = () => {
+const Messages = (props) => {
   return (
     <>
      {
-              !props.user &&
-        <Navigate to="/Job" replace={true} />
+              props.user &&
+        <Link to="/Messages" replace={true} />
       }
     <div>Messages</div>
     <Header/>
