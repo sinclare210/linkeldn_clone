@@ -6,50 +6,50 @@ const games = [
   {
     id: 1,
     title: 'The Legend of Zelda: Breath of the Wild',
-    image: 'public/images/game1.png',
+    image: '/images/game1.png',
     downloadLink: '#',
   },
   {
     id: 2,
     title: 'God of War',
-    image: 'public/images/game2.jpg',
+    image: '/images/game2.jpg',
     downloadLink: '#',
   },
   {
     id: 3,
     title: 'Minecraft',
-    image: 'public/images/game3.jpg',
+    image: '/images/game3.jpg',
     downloadLink: '#',
   },
   {
     id: 4,
     title: 'Fortnite',
-    image: 'public/images/game4.jpg',
+    image: '/images/game4.jpg',
     downloadLink: '#',
   },
   {
     id: 5,
     title: 'Apex Legends',
-    image: 'public/images/game5.jpg',
+    image: '/images/game5.jpg',
     downloadLink: '#',
   },
   {
     id: 6,
     title: 'Call of Duty: Warzone',
-    image: 'public/images/game6.jpg',
+    image: '/images/game6.jpg',
     downloadLink: '#',
   },
   {
     id: 7,
     title: 'Red Dead Redemption 2',
-    image: 'public/images/game7.jpg',
+    image: '/images/game7.jpg',
 
     downloadLink: '#',
   },
   {
     id: 9,
     title: 'Stardew Valley',
-    image: 'public/images/game9.jpg',
+    image: '/images/game9.jpg',
     downloadLink: '#',
   },
   {
