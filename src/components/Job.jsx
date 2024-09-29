@@ -6,6 +6,10 @@ import Header from './Header'
 const Job = (props) => {
   return (
     <>
+     {
+              !props.user &&
+        <Navigate to="/Job" replace={true} />
+      }
     
     <div>Job</div>
      <Header/>
