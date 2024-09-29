@@ -7,10 +7,7 @@ import { Link } from 'react-router-dom'
 const Messages = (props) => {
   return (
     <>
-     {
-              props.user &&
-        <Link to="/Messages" replace={true} />
-      }
+   
     <div>Messages</div>
     <Header/>
     </>

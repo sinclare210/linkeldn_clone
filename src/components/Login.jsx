@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { connect } from 'react-redux'
 import  SignInAPI  from '../actions/Index'
 import { Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 
@@ -15,9 +16,9 @@ const Login = (props) => {
 
         }
     <Nav>
-        <a href="/">
+        <Link href="/">
         <img src="/images/home-logo.svg" alt="" />
-        </a>
+        </Link>
         <div>
             <Join onClick={() => props.signIn()}>
                 Join Now
