@@ -16,15 +16,7 @@ import { auth } from './Firebase';
 
 
 function App(props) {
-    useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(user => {
-      if (user) {
-        props.getUserAuth(); // Call your Redux action to set user in state
-      }
-    });
-
-    return () => unsubscribe(); // Cleanup subscription on unmount
-  }, [props]);
+   
   return (
     <>
       <Router>

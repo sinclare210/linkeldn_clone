@@ -14,12 +14,8 @@ const Messages = (props) => {
   )
 }
 
-const mapStateToProps = (state) => {
-  return {
-    user: state.userState.user,
-  }
-}
 
 
 
-export default connect(mapStateToProps)(Messages)
+
+export default (Messages)
