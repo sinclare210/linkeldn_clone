@@ -3,15 +3,15 @@ import Header from './Header'
 
 const Networks = () => {
      const friends = [
-    { name: 'Alice John', email: 'alice@example.com', image: 'public/images/user.svg' },
-    { name: 'Bob Smith', email: 'bob@example.com', image: 'public/images/user.svg' },
-    { name: 'Charlie Brown', email: 'charlie@example.com', image: 'public/images/user.svg' },
-    { name: 'David Wilson', email: 'david@example.com', image: 'public/images/user.svg' },
-    { name: 'Eva Green', email: 'eva@example.com', image: 'public/images/user.svg' },
-    { name: 'Frank Thomas', email: 'frank@example.com', image: 'public/images/user.svg' },
-    { name: 'David Wilson', email: 'david@example.com', image: 'public/images/user.svg' },
-    { name: 'Eva Green', email: 'eva@example.com', image: 'public/images/user.svg' },
-    { name: 'Frank Thomas', email: 'frank@example.com', image: 'public/images/user.svg' },
+    { name: 'Alice John', email: 'alice@example.com', image: '/images/user.svg' },
+    { name: 'Bob Smith', email: 'bob@example.com', image: '/images/user.svg' },
+    { name: 'Charlie Brown', email: 'charlie@example.com', image: '/images/user.svg' },
+    { name: 'David Wilson', email: 'david@example.com', image: '/images/user.svg' },
+    { name: 'Eva Green', email: 'eva@example.com', image: '/images/user.svg' },
+    { name: 'Frank Thomas', email: 'frank@example.com', image: '/images/user.svg' },
+    { name: 'David Wilson', email: 'david@example.com', image: '/images/user.svg' },
+    { name: 'Eva Green', email: 'eva@example.com', image: '/images/user.svg' },
+    { name: 'Frank Thomas', email: 'frank@example.com', image: '/images/user.svg' },
   ];
   return (
     <>
