@@ -6,6 +6,12 @@ import Header from './components/Header'
 import { useEffect } from 'react'
 import { getUserAuth } from './actions/Index'
 import { connect } from 'react-redux'
+import Job from './components/Job'
+import Networks from './components/Networks'
+import Messages from './components/Messages'
+import Notifications from './components/Notifications'
+import Gaming from './components/Gaming'
+
 
 
 function App(props) {
@@ -29,6 +35,11 @@ function App(props) {
               </>
             } 
           />
+          <Route path='/Job' element={<><Job/></>}/>
+          <Route path='/Networks' element={<><Networks/></>}/>
+          <Route path='/Messages' element={<><Messages/></>}/>
+          <Route path='/Notifications' element={<><Notifications/></>}/>
+          <Route path='/Gaming' element={<><Gaming/></>}/>
         </Routes>
       </Router>
     </>
