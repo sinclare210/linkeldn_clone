@@ -55,13 +55,13 @@ const games = [
   {
     id: 10,
     title: 'Cyberpunk 2077',
-    image: 'public/images/game10.jpg',
+    image: '/images/game10.jpg',
     downloadLink: '#',
   },
   {
     id: 11,
     title: 'Genshin Impact',
-    image: 'public/images/game11.jpg',
+    image: '/images/game11.jpg',
     downloadLink: '#',
   },
   {
