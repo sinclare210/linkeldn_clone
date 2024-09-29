@@ -7,7 +7,7 @@ const Job = (props) => {
   return (
     <>
      {
-              !props.user &&
+              props.user &&
         <Navigate to="/Job" replace={true} />
       }
     
