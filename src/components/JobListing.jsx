@@ -54,7 +54,7 @@ const JobListing = () => {
   ];
 
   return (
-     <div className="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-4">
+     <div className="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 pt-16">
       {jobs.map((job) => (
         <Job key={job.id} job={job} />
       ))}

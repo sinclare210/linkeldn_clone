@@ -12,6 +12,7 @@ import Messages from './components/Messages'
 import Notifications from './components/Notifications'
 import Gaming from './components/Gaming'
 import JobListing from './components/JobListing'
+import './index.css'; 
 
 
 
