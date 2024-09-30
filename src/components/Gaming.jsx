@@ -122,7 +122,7 @@ const games = [
 
   return (
     <>
-    <div className="min-h-screen bg-gray-100 p-8">
+    <div className="min-h-screen bg-gray-100 p-8 pt-14">
       <header className="mb-8 text-center">
         <h1 className="text-3xl font-bold">Games</h1>
       </header>
